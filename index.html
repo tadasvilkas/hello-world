@@ -7,9 +7,11 @@
   <style>
     body {
       margin: 0;
+      min-height: 100vh;
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background: #0f1115;
-      color: #e8e8ec;
+      background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #1b3a5c 100%);
+      background-attachment: fixed;
+      color: #eef0f8;
       line-height: 1.6;
     }
     main {
@@ -18,41 +20,51 @@
       padding: 48px 20px;
     }
     .date {
-      color: #8b93a7;
+      color: #f9c86b;
       font-size: 0.95rem;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
+      font-weight: 600;
     }
     h1 {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       margin: 8px 0 32px;
+      background: linear-gradient(90deg, #ff8a65, #f9c86b, #7aa2f7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
     h2 {
       font-size: 1.1rem;
-      color: #7aa2f7;
       margin: 36px 0 12px;
-      border-bottom: 1px solid #262a33;
       padding-bottom: 6px;
+      border-bottom: 2px solid currentColor;
     }
+    .group-lt { color: #5eead4; }
+    .group-world { color: #c4b5fd; }
+    .group-other { color: #fdba74; }
     .event {
-      background: #171a21;
-      border: 1px solid #262a33;
-      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-left: 4px solid currentColor;
+      border-radius: 12px;
       padding: 16px 18px;
       margin-bottom: 12px;
     }
     .event h3 {
       margin: 0 0 6px;
       font-size: 1.05rem;
+      color: #ffffff;
     }
     .event p {
       margin: 0;
-      color: #c4c8d4;
+      color: #d6dae6;
     }
     .test-note {
       margin-top: 40px;
       font-size: 0.85rem;
-      color: #6b7280;
+      color: #9aa3bf;
     }
   </style>
 </head>
@@ -61,23 +73,29 @@
     <div class="date">2026 m. lapkričio 23 d., pirmadienis</div>
     <h1>Dienos įvykiai</h1>
 
-    <h2>Lietuvoje</h2>
-    <div class="event">
-      <h3>Pavyzdinis įvykis</h3>
-      <p>Čia bus trijų–keturių sakinių aprašymas apie įvykį ar žmogų. Tekstas bus įtraukiantis, bet faktai bus tikrinami.</p>
-    </div>
+    <section class="group-lt">
+      <h2>Lietuvoje</h2>
+      <div class="event">
+        <h3>Pavyzdinis įvykis</h3>
+        <p>Čia bus trijų–keturių sakinių aprašymas apie įvykį ar žmogų. Tekstas bus įtraukiantis, bet faktai bus tikrinami.</p>
+      </div>
+    </section>
 
-    <h2>Pasaulyje</h2>
-    <div class="event">
-      <h3>Pavyzdinis pasaulinis įvykis</h3>
-      <p>Čia bus aprašymas apie pasaulinio lygio įvykį. Šie duomenys tik testiniai, ne tikri faktai.</p>
-    </div>
+    <section class="group-world">
+      <h2>Pasaulyje</h2>
+      <div class="event">
+        <h3>Pavyzdinis pasaulinis įvykis</h3>
+        <p>Čia bus aprašymas apie pasaulinio lygio įvykį. Šie duomenys tik testiniai, ne tikri faktai.</p>
+      </div>
+    </section>
 
-    <h2>Kita</h2>
-    <div class="event">
-      <h3>Pavyzdinė šventė ar diena</h3>
-      <p>Pvz. tarptautinė ar nestandartinė diena. Kategorija bus rodoma tik tada, kai yra įvykių.</p>
-    </div>
+    <section class="group-other">
+      <h2>Kita</h2>
+      <div class="event">
+        <h3>Pavyzdinė šventė ar diena</h3>
+        <p>Pvz. tarptautinė ar nestandartinė diena. Kategorija bus rodoma tik tada, kai yra įvykių.</p>
+      </div>
+    </section>
 
     <p class="test-note">Testinė versija: visi įvykiai čia yra pavyzdiniai, o tikri bus generuojami automatiškai.</p>
   </main>
